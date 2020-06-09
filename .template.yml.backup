@@ -1,0 +1,22 @@
+ROSTemplateFormatVersion: '2015-09-01'
+Transform: 'Aliyun::Serverless-2018-04-03'
+Resources:
+  FunPuppetter:
+    Type: 'Aliyun::Serverless::Service'
+    Properties:
+      Description: 'Puppetter服务, 一个服务下可以创建多个函数'
+    baiduKeywordResult:
+      Type: 'Aliyun::Serverless::Function'
+      Properties:
+        Handler: index.handler
+        Runtime: nodejs10
+        CodeUri: './baiduKeywordResult'
+        Timeout: 600
+        MemorySize: 1024
+        InstanceConcurrency: 3
+      Events:
+        httpTrigger:
+          Type: HTTP
+          Properties:
+            AuthType: ANONYMOUS
+            Methods: ['POST', 'GET']

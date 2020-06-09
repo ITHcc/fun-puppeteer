@@ -1,0 +1,6 @@
+nasMappings:
+  FunPupptter:
+    - localNasDir: baiduKeywordResult\.fun\root
+      remoteNasDir: /mnt/auto/root
+    - localNasDir: baiduKeywordResult\node_modules
+      remoteNasDir: /mnt/auto/node_modules
